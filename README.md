@@ -38,8 +38,8 @@ There are faster alternatives to scp (such as Filezilla). Using scp to transfer 
 Open Terminal (or equivalent on Windows).<br/><br/>
 ssh rain@hpc.brc.berkeley.edu <br/><br/>
 cd ../../../scratch/rain  
-<ul><li>Change directory to my scratch directory. **Note:** make sure to submit jobs from the scratch directory.</li></ul>
-cd ExampleDir 
+<ul><li>Change directory to my scratch directory. Make sure to submit jobs from the scratch directory.</li></ul>
+cd ExampleDir <br/><br/>
 sbatch script.txt 
 <ul><li>Send my script to be run </li></ul>
 squeue -u rain 
