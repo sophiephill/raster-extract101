@@ -53,3 +53,40 @@ nano code.R
 sbatch script.txt 
           <ul><li>Send job again, hopefully this time no errors.</li></ul>
 
+Example Script:
+```
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=test
+#
+# Partition:
+#SBATCH --partition=savio2_htc
+#
+# Request one node:
+#SBATCH --nodes=10
+#
+# Specify one task:
+#SBATCH --ntasks-per-node=1
+#
+# Number of processors for threading:
+#SBATCH --cpus-per-task=20
+#
+# Wall clock limit:
+#SBATCH --time=01:00:00
+#
+## Command(s) to run (example):
+module load r
+R CMD BATCH code.R 
+```
+
+Notice you have to specify how long you think your job will take. If you say the job will take 72 hours (the maximum), it will be pushed to the bottom of the queue. However, if you underestimate the runtime, the job will be terminated before it has completed. You are charged for the actual time the job takes to run, not the time you forecast. 
+
+**Cost Considerations**
+
+The partition determines which cluster of nodes the job will be run on. Each partition uses a different type of node. For example, savio_bigmem has four nodes each with 20 cores. For reference, my Macbook Air has two cores. A list of all of Savio's partitions is [here](https://docs-research-it.berkeley.edu/services/high-performance-computing/user-guide/hardware-config/). <br/>
+Savio charges in Service Units = number of cores x hours used. Some partitions scale the price up/down depending on the type of node used. On all partitions except savio2_htc and savio2_gpu, you will be charged for all the cores on all the nodes used even if your job does not use all the cores. For example, if you run a job for one hour on one savio_bigmem core, you will be charged for 20 cores x 1 hour (x scaling factor). In contrast, using savio2_htc, you can specify how many cores you need and only be charged for those cores. The number of cores used by the job = cpus-per-task x ntasks-per-node. So if you only need four cores, set ntasks=4, cpus-per-task=1.
+
+
+
+
+
