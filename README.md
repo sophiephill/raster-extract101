@@ -4,7 +4,7 @@
 
 <img src="https://i.stack.imgur.com/8E1ug.png" width="400" />
 
-Raster data are gridded equally sized pixels that each store a value. A dataset with resolution 30 m has cells of size 30 x 30 m. When you extract data, you overlay the shape on the grid and aggregate the values in the cells it covers.
+Raster data are equally sized pixels arranged in a grid that each store a value. A dataset with resolution 30 m has cells of size 30 x 30 m. When you extract data, you overlay the shape on the grid and aggregate the values in the cells it covers.
 
 The basic workflow is: 
 1. Read in shapefile using readOGR/st_read 
