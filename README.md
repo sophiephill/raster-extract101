@@ -2,6 +2,6 @@
 
 ## R Code
 
-![](https://i.stack.imgur.com/8E1ug.png =250x)
+<img src="https://i.stack.imgur.com/8E1ug.png" width="250")
 
 ## Savio
