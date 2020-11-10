@@ -13,7 +13,7 @@ The basic workflow is:
 <ul><li> r <- raster("temp.tif") </li></ul>
 3. Use spTransform to convert CRS of shapefile to raster's units.
 <ul><li> censusTracts <- spTransform(censusTracts, crs(r)@projargs) </li></ul>
-<ul><li> There are a lot of things that can go wrong in this step. The raster packages uses lowercase crs, while SpatialPolygons use CRS. Sometimes the shapefile doesn't have specify its CRS so spTransform will say *Cannot transform from NA reference system.* Then you have to check the shapefile's metadata to determine its CRS, and reread in the file using readOGR("tracts", p4s = "+init=epsg:3857"). </li></ul>
+<ul><li> There are a lot of things that can go wrong in this step. The raster package uses lowercase crs, while SpatialPolygons use CRS. Sometimes the shapefile doesn't have specify its CRS so spTransform will give the error <em>Cannot transform from NA reference system.</em> Then you have to check the shapefile's metadata to determine its CRS, and reread in the file using readOGR("tracts", p4s = "+init=epsg:3857"). </li></ul>
 4. Use raster::extract to extract data per polygon to a dataframe. Specify the function you wish to aggregate the values. The output dataframe will not contain any of the original columns or IDs but the output will preserve the orginal order.
 <ul><li> vals <- extract(r, censusTracts, base::mean, df = T) </li></ul>
 <ul><li> vals$GEOID <- censusTracts$GEOID </li></ul>
