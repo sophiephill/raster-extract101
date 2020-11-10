@@ -17,9 +17,7 @@ The basic workflow is:
 4. Use raster::extract to extract data per polygon to a dataframe. Specify the function you wish to aggregate the values. The output dataframe will not contain any of the original columns or IDs but the output will preserve the orginal order.
 <ul><li> vals <- extract(r, censusTracts, base::mean, df = T) </li></ul>
 <ul><li> vals$GEOID <- censusTracts$GEOID </li></ul>
-<ul><li> I specify base::mean instead of just mean even though mean is the function name because I kept getting errors where somehow the name mean was being reassigned to a non-function value which took a while to debug. Now I just use base::mean for safety. </li></ul>
 
-1. 
 
 ## Savio
 
@@ -39,11 +37,11 @@ There are faster alternatives to scp (such as Filezilla). Using scp to transfer 
 
 Open Terminal (or equivalent on Windows).<br/><br/>
 ssh rain@hpc.brc.berkeley.edu <br/><br/>
-< enter password when prompted> <br/><br/>
-cd ../../../scratch/rain  *Change directory to my scratch directory. **Note:** make sure to submit jobs from the scratch directory.* <br/><br/>
-cd ExampleDir <br/><br/>
+cd ../../../scratch/rain  
+<ul><li>Change directory to my scratch directory. **Note:** make sure to submit jobs from the scratch directory.</li></ul>
+cd ExampleDir 
 sbatch script.txt 
-<ul><li>Send my script to be run* <br/><br/>
+<ul><li>Send my script to be run </li></ul>
 squeue -u rain 
   <ul><li>Check the status of my job</li></ul>
 less code.Rout 
