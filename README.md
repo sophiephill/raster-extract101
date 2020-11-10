@@ -30,7 +30,7 @@ Savio provides an in depth [User Guide](https://docs-research-it.berkeley.edu/se
 ***Note**: To transfer to or from Savio, use a Terminal shell that is not logged in to Savio.* <br/><br/>
 Open Terminal (or equivalent on Windows).<br/><br/>
 Transfer from local computer to Savio: scp ~/Desktop/lab/code.R rain@**dtn**.brc.berkeley.edu:/global/scratch/rain/ExampleDir <br/><br/>
-<ul><li>To transfer an entire folder, use scp -r path/to/dir </li></ul> <br/><br/>
+<ul><li>To transfer an entire folder, use scp -r path/to/dir </li></ul> 
 Transfer from Savio to local: scp -r rain@**dtn**.brc.berkeley.edu:/global/scratch/rain/ExampleDir/ ~/Desktop/ <br/><br/>
 
 There are faster alternatives to scp (such as Filezilla). Using scp to transfer large raster files (say 120 MB) could take an hour. You can transfer files from Google Drive or BDrive using rclone (described [here](https://docs-research-it.berkeley.edu/services/high-performance-computing/user-guide/transferring-data/rclone-box-bdrive/)).
@@ -42,10 +42,16 @@ ssh rain@hpc.brc.berkeley.edu <br/><br/>
 < enter password when prompted> <br/><br/>
 cd ../../../scratch/rain  *Change directory to my scratch directory. **Note:** make sure to submit jobs from the scratch directory.* <br/><br/>
 cd ExampleDir <br/><br/>
-sbatch script.txt *Send my script to be run* <br/><br/>
-squeue -u rain *Check the status of my job* <br/><br/>
-less code.Rout *Check the output of the compiler, see I made a typo so it errored on the second line* <br/><br/>
-module load nano *Nano is a text editor that enables you to edit files through the command line* <br/><br/>
-nano code.R *Open R file to fix the typo. To save file after edits, ctrl+x to exit, then press y to save edits.* <br/><br/>
-sbatch script.txt *Send job again, hopefully this time no errors.*
+sbatch script.txt 
+<ul><li>Send my script to be run* <br/><br/>
+squeue -u rain 
+  <ul><li>Check the status of my job</li></ul>
+less code.Rout 
+    <ul><li>Check the output of the compiler, see I made a typo so it errored on the second line</li></ul>
+module load nano 
+      <ul><li>Nano is a text editor that enables you to edit files through the command line</li></ul>
+nano code.R 
+        <ul><li>Open R file to fix the typo. To save file after edits, ctrl+x to exit, then press y to save edits.</li></ul>
+sbatch script.txt 
+          <ul><li>Send job again, hopefully this time no errors.</li></ul>
 
