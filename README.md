@@ -27,7 +27,7 @@ Savio provides an in depth [User Guide](https://docs-research-it.berkeley.edu/se
 
 ***Note**: To transfer to or from Savio, use a Terminal shell that is not logged in to Savio.* <br/><br/>
 Open Terminal (or equivalent on Windows).<br/><br/>
-Transfer from local computer to Savio: scp ~/Desktop/lab/code.R username@**dtn**.brc.berkeley.edu:/global/scratch/rain/ExampleDir
+Transfer from local computer to Savio: scp ~/Desktop/lab/code.R username@**dtn**.brc.berkeley.edu:/global/scratch/username/ExampleDir
 <ul><li>To transfer an entire folder, use scp -r path/to/dir </li></ul> 
 Transfer from Savio to local: scp -r username@dtn.brc.berkeley.edu:/global/scratch/rain/ExampleDir/ ~/Desktop/ <br/><br/>
 
