@@ -17,7 +17,7 @@ mintmp <- list("../prism/tmin/")
 maxtmp <- list("../prism/tmax/")
 precip <- list("../prism/ppt/")
 
-prism_list <- parLapply(cl, list(meantmp, mintmp, maxtmp, precip), fun=function(path) {
+prism_list <- parLapply(cl, list(meantmp, mintmp, maxtmp, precip), FUN=function(path) {
   options(prism.path = path)
   dat <- ls_prism_data()
   stacks <- prism_stack(dat[1:nrow(dat),])
